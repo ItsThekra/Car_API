@@ -1,120 +1,31 @@
 {
   "info": {
-    "name": "Car API Collection",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "name": "Car API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "car-api-20250618030651"
   },
   "item": [
-    {
-      "name": "Get All Dealers",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/dealers",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "api",
-            "dealers"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Create Dealer",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"thekra\",\n  \"email\": \"thekra@gmail.com\",\n  \"city\": \"Jeddah\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:3000/api/dealers",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "api",
-            "dealers"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Get All CarMakes",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/makes",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "api",
-            "makes"
-          ]
-        }
-      }
-    },
-    {
-      "name": "Create CarMake",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"country\": \"Germany\",\n  \"brand\": \"BMW\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:3000/api/makes",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "api",
-            "makes"
-          ]
-        }
-      }
-    },
     {
       "name": "Get All Cars",
       "request": {
         "method": "GET",
-        "header": [],
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
         "url": {
-          "raw": "http://localhost:3000/api/cars",
-          "protocol": "http",
+          "raw": "{{base_url}}/api/cars",
           "host": [
-            "localhost"
+            "{{base_url}}"
           ],
-          "port": "3000",
           "path": [
             "api",
             "cars"
           ]
-        }
+        },
+        "body": {}
       }
     },
     {
@@ -127,22 +38,343 @@
             "value": "application/json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"dealerId\": \"1\",\n  \"carMakeId\": \"1\",\n  \"name\": \"Mercedes-Benz \",\n  \"price\": 300000,\n  \"year\": 2025,\n  \"color\": \"Gray\",\n  \"wheelsCount\": 4\n}"
-        },
         "url": {
-          "raw": "http://localhost:3000/api/cars",
-          "protocol": "http",
+          "raw": "{{base_url}}/api/cars",
           "host": [
-            "localhost"
+            "{{base_url}}"
           ],
-          "port": "3000",
           "path": [
             "api",
             "cars"
           ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
         }
+      }
+    },
+    {
+      "name": "Get Car by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/cars/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "cars",
+            ":id"
+          ]
+        },
+        "body": {}
+      }
+    },
+    {
+      "name": "Update Car",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/cars/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "cars",
+            ":id"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        }
+      }
+    },
+    {
+      "name": "Delete Car",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/cars/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "cars",
+            ":id"
+          ]
+        },
+        "body": {}
+      }
+    },
+    {
+      "name": "Get All CarMakes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/makes",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "makes"
+          ]
+        },
+        "body": {}
+      }
+    },
+    {
+      "name": "Create CarMake",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/makes",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "makes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        }
+      }
+    },
+    {
+      "name": "Get CarMake by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/makes/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "makes",
+            ":id"
+          ]
+        },
+        "body": {}
+      }
+    },
+    {
+      "name": "Update CarMake",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/makes/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "makes",
+            ":id"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        }
+      }
+    },
+    {
+      "name": "Delete CarMake",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/makes/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "makes",
+            ":id"
+          ]
+        },
+        "body": {}
+      }
+    },
+    {
+      "name": "Get All CarDealers",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/dealers",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "dealers"
+          ]
+        },
+        "body": {}
+      }
+    },
+    {
+      "name": "Create CarDealer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/dealers",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "dealers"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        }
+      }
+    },
+    {
+      "name": "Get CarDealer by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/dealers/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "dealers",
+            ":id"
+          ]
+        },
+        "body": {}
+      }
+    },
+    {
+      "name": "Update CarDealer",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/dealers/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "dealers",
+            ":id"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        }
+      }
+    },
+    {
+      "name": "Delete CarDealer",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/dealers/:id",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "dealers",
+            ":id"
+          ]
+        },
+        "body": {}
       }
     }
   ]
